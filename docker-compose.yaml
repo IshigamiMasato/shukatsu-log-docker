@@ -1,0 +1,26 @@
+services:
+  frontend:
+      build: ./node
+      ports:
+        - "3000:3000"
+      volumes:
+        - ../kakeibo-frontend/:/var/app/
+      working_dir: /var/app/
+      tty: true
+
+  backend:
+    build: ./php82
+    ports:
+      - "8080:80"
+    volumes:
+      - ../kakeibo-backend/:/var/www/
+    working_dir: /var/www/
+
+  db:
+    build: ./mysql80
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./mysql80/data:/var/lib/mysql
