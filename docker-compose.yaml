@@ -4,7 +4,7 @@ services:
       ports:
         - "3000:3000"
       volumes:
-        - ../kakeibo-frontend/:/var/app/
+        - ..shukatsu-log-frontend/:/var/app/
       working_dir: /var/app/
       tty: true
 
@@ -13,7 +13,7 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - ../kakeibo-backend/:/var/www/
+      - ../shukatsu-log-backend/:/var/www/
     working_dir: /var/www/
 
   db:
