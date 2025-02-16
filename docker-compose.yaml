@@ -4,7 +4,7 @@ services:
       ports:
         - "3000:3000"
       volumes:
-        - ..shukatsu-log-frontend/:/var/app/
+        - ../shukatsu-log-frontend/:/var/app/
       working_dir: /var/app/
       tty: true
 
